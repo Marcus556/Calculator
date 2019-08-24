@@ -7,43 +7,40 @@ let timerSeconds = 00;
 let timerMinutes = 00;
 let timerTest = "sssss";
 let valueToBeStored;
-// evaluate function //
+
 const display = document.querySelector(".display");
 const equalsBtn = document.getElementById("equalsButton");
+const allCearBtn = document.getElementById("allClearBtn");
+const entryClearBtn = document.getElementById("entryClearBtn");
+const timerBtn = document.getElementById('timerBtn');
+const storeBtn = document.getElementById("storeBtn");
+const buttons = document.querySelector('.buttons');
+
 equalsBtn.addEventListener("click", evaluate);
+allClearBtn.addEventListener("click", clearFunc);
+entryClearBtn.addEventListener("click", entryClear);
+timerBtn.addEventListener('click', startTimer);
+storeBtn.addEventListener("click", storeValue)
 
 function evaluate() {
     let results = eval(calc.ShowingValue);
     calc.ShowingValue = results;
 };
-// ---------------------------------------------------------------//
-
-// Clear funktion //
-const allCearBtn = document.getElementById("allClearBtn");
-allClearBtn.addEventListener("click", clearFunc);
 
 function clearFunc() {
     calc.ShowingValue = 0;
     updateDisplay()
 }
-// ------------------------------------------------------------- //
-
-//undo funktion //
-const entryClearBtn = document.getElementById("entryClearBtn");
-entryClearBtn.addEventListener("click", entryClear);
 
 function entryClear() {
     console.log("sad")
     calc.ShowingValue = calc.ShowingValue.slice(0, -1);
     updateDisplay;
 }
-// ------------------------------------------------------------- //
 
-// update display //
 function updateDisplay(input) {
     display.value = calc.ShowingValue;
 }
-// ------------------------------------------------------------- //
 
 function numberInput(button) {
     const { ShowingValue } = calc;
@@ -51,15 +48,6 @@ function numberInput(button) {
     updateDisplay()
 }
 
-
-// --- Timer ---//
-// Hämta timer-knappen och lägg till en eventlistener. //
-const timerBtn = document.getElementById('timerBtn');
-timerBtn.addEventListener('click', startTimer);
-
-// Funktion som en timer, och ändrar innerText i timer-knappen. utefter timern. //
-// Om timerActive är true när man trycker på knappen så sätts den till false och knappen och timern återställs //
-// När timern når 60 minuter återställs timern, och ett meddelande visas.
 function startTimer() {
     if (timerActive == false) {
         timerActive = true;
@@ -90,12 +78,6 @@ function startTimer() {
         timerBtn.innerText = "timer";
     }
 }
-// --------------------------------------------------------------//
-
-// Storage funktion //
-const storeBtn = document.getElementById("storeBtn");
-storeBtn.addEventListener("click", storeValue)
-
 
 function storeValue() {
     let valueToBeStored = calc.ShowingValue;
@@ -129,7 +111,6 @@ function storeValue() {
     })
 }
 
-
 function testFunc(event) {
 
     console.log(event)
@@ -160,12 +141,6 @@ function testFunc(event) {
     }
 }
 
-
-
-
-
-
-const buttons = document.querySelector('.buttons');
 buttons.addEventListener('click', (event) => {
     const { target } = event;
     if (!target.matches('button')) {
@@ -209,5 +184,55 @@ buttons.addEventListener('click', (event) => {
             }
     }
 })
+
+
+
+
+
+
+
+
+// Clear funktion //
+
+
+
+// ------------------------------------------------------------- //
+
+//undo funktion //
+
+
+
+
+// ------------------------------------------------------------- //
+
+// update display //
+
+// ------------------------------------------------------------- //
+
+
+
+// --- Timer ---//
+// Hämta timer-knappen och lägg till en eventlistener. //
+
+
+// Funktion som en timer, och ändrar innerText i timer-knappen. utefter timern. //
+// Om timerActive är true när man trycker på knappen så sätts den till false och knappen och timern återställs //
+// När timern når 60 minuter återställs timern, och ett meddelande visas.
+
+// --------------------------------------------------------------//
+
+// Storage funktion //
+
+
+
+
+
+
+
+
+
+
+
+
 
 
