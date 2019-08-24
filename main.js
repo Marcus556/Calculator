@@ -1,6 +1,8 @@
 const calc = {
     ShowingValue: "0",
 };
+
+// Variables and consts //
 const storage = [0, 0, 0, 0]
 let timerActive = false;
 let timerSeconds = 00;
@@ -8,20 +10,7 @@ let timerMinutes = 00;
 let timerTest = "sssss";
 let valueToBeStored;
 
-const display = document.querySelector(".display");
-const equalsBtn = document.getElementById("equalsButton");
-const allCearBtn = document.getElementById("allClearBtn");
-const entryClearBtn = document.getElementById("entryClearBtn");
-const timerBtn = document.getElementById('timerBtn');
-const storeBtn = document.getElementById("storeBtn");
-const buttons = document.querySelector('.buttons');
-
-equalsBtn.addEventListener("click", evaluate);
-allClearBtn.addEventListener("click", clearFunc);
-entryClearBtn.addEventListener("click", entryClear);
-timerBtn.addEventListener('click', startTimer);
-storeBtn.addEventListener("click", storeValue)
-
+// functions //
 function evaluate() {
     let results = eval(calc.ShowingValue);
     calc.ShowingValue = results;
@@ -184,6 +173,23 @@ buttons.addEventListener('click', (event) => {
             }
     }
 })
+
+// elements //
+const display = document.querySelector(".display");
+const equalsBtn = document.getElementById("equalsButton");
+const allCearBtn = document.getElementById("allClearBtn");
+const entryClearBtn = document.getElementById("entryClearBtn");
+const timerBtn = document.getElementById('timerBtn');
+const storeBtn = document.getElementById("storeBtn");
+const buttons = document.querySelector('.buttons');
+
+// EventListeners //
+equalsBtn.addEventListener("click", evaluate);
+allClearBtn.addEventListener("click", clearFunc);
+entryClearBtn.addEventListener("click", entryClear);
+timerBtn.addEventListener('click', startTimer);
+storeBtn.addEventListener("click", storeValue)
+
 
 
 
