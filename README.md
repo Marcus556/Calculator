@@ -1,8 +1,8 @@
 # Calculator
 
-Kompletteringsuppgift:
+## Kompletteringsuppgift:
 Bygg en kalkylator efter 7 user-stories.
-User-stories:
+### User-stories:
 
 There should be a graphical interface for the calculator, including a body, a place for buttons and a screen.
 
